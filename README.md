@@ -2,9 +2,18 @@
 
 ### quick start
 
-```
+```bash
+# Upstart server
 $ dep ensure
 $ realize start
+
+# Setup client(https://github.com/grpc/grpc/blob/master/doc/command_line_tool.md)
+$ git clone https://github.com/grpc/grpc
+$ cd grpc
+$ git submodule update --init
+$ sudo apt-get install libgflags-dev
+$ make grpc_cli
+# for Ubuntu
 ```
 
 ### development setup
