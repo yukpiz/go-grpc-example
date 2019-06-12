@@ -1,4 +1,4 @@
-# go-protobug-example
+# go-grpc-example
 
 ### quick start
 
