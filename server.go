@@ -18,7 +18,10 @@ func main() {
 	}
 
 	server := grpc.NewServer()
-	pb.RegisterUserServer(server, &service.UserService{}) // UserServer interfaceに準拠している型
+	us := &service.UserService{}
+	pb.RegisterUserServer(server, us) // UserServer interfaceに準拠している型
 	log.Println("===> Wait Your Connection...")
-	server.Serve(port)
+	if err := server.Serve(port); err != nil {
+		log.Fatal(err)
+	}
 }
